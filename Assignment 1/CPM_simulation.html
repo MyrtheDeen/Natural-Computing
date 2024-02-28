@@ -3,7 +3,7 @@
 <html lang="en">
 <head><meta http-equiv="Content-Type" content="text/html;
 charset=UTF-8">
-<title>CPM Simulation</title>
+<title>crazy ass simulation</title>
 <style type="text/css"> 
 body{
     font-family: "HelveticaNeue-Light", sans-serif; padding : 15px;
@@ -11,7 +11,7 @@ body{
 </style>
 
 <!-- Sourcing the cpm build -->
-<script src="artistoo/build/artistoo.js"></script>
+<script src="../../build/artistoo.js"></script>
 <script>
 "use strict"
 
@@ -42,8 +42,7 @@ conf : {
 
     
     // Adhesion parameters:
-    J : [ [0,0], 
-          [0,20] ],
+    J : [ [0,20], [0,20] ],
     
     // VolumeConstraint parameters
     LAMBDA_V : [0,50],             // VolumeConstraint importance per cellkind
@@ -65,7 +64,7 @@ conf : {
 simsettings : {
 
     // Cells on the grid
-    NRCELLS : [15],                    // Number of cells to seed for all
+    NRCELLS : [40,0],                    // Number of cells to seed for all
     // non-background cellkinds.
     // Runtime etc
     BURNIN : 50,
@@ -80,7 +79,7 @@ simsettings : {
     zoom : 2,                           // zoom in on canvas with this factor.
     
     // Output images
-    SAVEIMG : true,                     // Should a png image of the grid be saved
+    // SAVEIMG : true,                     // Should a png image of the grid be saved
     // during the simulation?
     IMGFRAMERATE : 5,                   // If so, do this every <IMGFRAMERATE> MCS.
     SAVEPATH : "output/img/CollectiveMigration",    // ... And save the image in this folder.
@@ -121,11 +120,11 @@ conf : {
     V : [0,314],                    // Target volume of each cellkind
     
     // PerimeterConstraint parameters
-    LAMBDA_P : [0,100],              // PerimeterConstraint importance per cellkind
-    P : [0,100],                 // Target perimeter of each cellkind
+    LAMBDA_P : [0,10],              // PerimeterConstraint importance per cellkind
+    P : [0,63],                 // Target perimeter of each cellkind
     
     // ActivityConstraint parameters
-    LAMBDA_ACT : [0,0],           // ActivityConstraint importance per cellkind
+    LAMBDA_ACT : [0,140],           // ActivityConstraint importance per cellkind
     MAX_ACT : [0,0],                // Activity memory duration per cellkind
     ACT_MEAN : "geometric"              // Is neighborhood activity computed as a
     // "geometric" or "arithmetic" mean?
@@ -151,7 +150,7 @@ simsettings : {
     zoom : 2,                           // zoom in on canvas with this factor.
     
     // Output images
-    SAVEIMG : true,                     // Should a png image of the grid be saved
+    // SAVEIMG : true,                     // Should a png image of the grid be saved
     // during the simulation?
     IMGFRAMERATE : 5,                   // If so, do this every <IMGFRAMERATE> MCS.
     SAVEPATH : "output/img/CollectiveMigration",    // ... And save the image in this folder.
@@ -186,12 +185,12 @@ conf : {
     
     // Adhesion parameters:
     // J : [ [0,20], [20,0] ],
-    J : [   [0, 0, 0], 
-			[0,20, 0], 
-			[0,0, 200] ],
+    J : [ [0,20,20], 
+			[20,20,100], // epidermal cells
+			[20,100,200] ],
     
     // VolumeConstraint parameters
-    LAMBDA_V : [0,50,100],				// VolumeConstraint importance per cellkind
+    LAMBDA_V : [0,50,3],				// VolumeConstraint importance per cellkind
     V : [0,500,314],					// Target volume of each cellkind
     
     // PerimeterConstraint parameters
@@ -199,7 +198,7 @@ conf : {
     P : [0,340, 63],					// Target perimeter of each cellkind
     
     // ActivityConstraint parameters
-    LAMBDA_ACT : [0,140, 0],			// ActivityConstraint importance per cellkind
+    LAMBDA_ACT : [0,200,200],			// ActivityConstraint importance per cellkind
     MAX_ACT : [0,80, 0],				// Activity memory duration per cellkind
     ACT_MEAN : "geometric"				// Is neighborhood activity computed as a
     // "geometric" or "arithmetic" mean?
@@ -225,7 +224,7 @@ simsettings : {
     zoom : 2,							// zoom in on canvas with this factor.
     
     // Output images
-    SAVEIMG : true,						// Should a png image of the grid be saved
+    // SAVEIMG : true,						// Should a png image of the grid be saved
     // during the simulation?
     IMGFRAMERATE : 5,					// If so, do this every <IMGFRAMERATE> MCS.
     SAVEPATH : "output/img/CollectiveMigration",	// ... And save the image in this folder.
@@ -261,19 +260,20 @@ conf : {
     
     // Adhesion parameters:
     // J : [ [0,20], [20,0] ],
-    J : [   [0, 0, 0], 
-			[0,20, 0], 
-			[0,0, 200] ],
+    J : [ [0,20,20], 
+			[20,20,100], // epidermal cells
+			[20,100,200] ],
+    
     // VolumeConstraint parameters
-    LAMBDA_V : [0,50,100],				// VolumeConstraint importance per cellkind
-    V : [0,500,314],					// Target volume of each cellkind
+    LAMBDA_V : [0,50,20],				// VolumeConstraint importance per cellkind
+    V : [0,500,180],					// Target volume of each cellkind
     
     // PerimeterConstraint parameters
     LAMBDA_P : [0,2, 10],				// PerimeterConstraint importance per cellkind
     P : [0,340, 63],					// Target perimeter of each cellkind
     
     // ActivityConstraint parameters
-    LAMBDA_ACT : [0,140, 0],			// ActivityConstraint importance per cellkind
+    LAMBDA_ACT : [0,200, 200],			// ActivityConstraint importance per cellkind
     MAX_ACT : [0,80, 0],				// Activity memory duration per cellkind
     ACT_MEAN : "geometric"				// Is neighborhood activity computed as a
     // "geometric" or "arithmetic" mean?
@@ -299,7 +299,7 @@ simsettings : {
     zoom : 2,							// zoom in on canvas with this factor.
     
     // Output images
-    SAVEIMG : true,						// Should a png image of the grid be saved
+    // SAVEIMG : true,						// Should a png image of the grid be saved
     // during the simulation?
     IMGFRAMERATE : 5,					// If so, do this every <IMGFRAMERATE> MCS.
     SAVEPATH : "output/img/CollectiveMigration",	// ... And save the image in this folder.
@@ -344,14 +344,14 @@ function initialize(){
     let custommethods2 = {
         // Wrap the call to initializeGrid with a function that provides the desired parameters
         initializeGrid: function() {
-            initializeGrid.call(this, 50, 15); // Example: gridSpacing=50, seedCellCount=15
+            initializeGrid.call(this, 50, 40); // Example: gridSpacing=50, seedCellCount=15
         },
     };
 
     let custommethods3 = {
         // Wrap the call to initializeGrid with a function that provides the desired parameters
         initializeGrid: function() {
-            initializeGrid.call(this, 30,15); // Example: gridSpacing=30, seedCellCount=15
+            initializeGrid.call(this, 30,40); // Example: gridSpacing=30, seedCellCount=15
         },
     };
     sim_0 = new CPM.Simulation(config_0, custommethods1);
